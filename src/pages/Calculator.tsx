@@ -283,70 +283,71 @@ export const Calculator: React.FC<CalculatorProps> = ({ onNavigateTab }) => {
         </div>
 
         {/* Options Row (Time, Waiting, Hill Road) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-          {/* Time Picker */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5 text-amber-500" />
-              {t('ride_time')}
-            </label>
-            <div className="flex gap-1.5">
+        <div className="space-y-3 pt-2">
+          {/* Row 1: Time + Waiting — two equal columns */}
+          <div className="grid grid-cols-2 gap-3">
+            {/* Time Picker */}
+            <div>
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                <span className="truncate">{t('ride_time')}</span>
+              </label>
+              <div className="flex gap-1.5">
+                <input
+                  type="time"
+                  value={rideTime}
+                  onChange={(e) => {
+                    setRideTime(e.target.value);
+                    setIsTimeNow(false);
+                  }}
+                  className="w-full h-11 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-amber-500/50"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setRideTime(getCurrentTimeHHMM());
+                    setIsTimeNow(true);
+                  }}
+                  className={`px-2.5 rounded-xl border text-xs font-bold shrink-0 transition-colors ${
+                    isTimeNow
+                      ? 'bg-amber-500 text-slate-950 border-amber-500'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700'
+                  }`}
+                >
+                  {t('now')}
+                </button>
+              </div>
+            </div>
+
+            {/* Waiting Minutes */}
+            <div>
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1 truncate">
+                {t('waiting_minutes')}
+              </label>
               <input
-                type="time"
-                value={rideTime}
-                onChange={(e) => {
-                  setRideTime(e.target.value);
-                  setIsTimeNow(false);
-                }}
+                type="number"
+                min="0"
+                step="1"
+                value={waitingMinutes === 0 ? '' : waitingMinutes}
+                onChange={(e) => setWaitingMinutes(Math.max(0, parseInt(e.target.value) || 0))}
+                placeholder="0 min"
                 className="w-full h-11 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-amber-500/50"
               />
-              <button
-                type="button"
-                onClick={() => {
-                  setRideTime(getCurrentTimeHHMM());
-                  setIsTimeNow(true);
-                }}
-                className={`px-2.5 rounded-xl border text-xs font-semibold shrink-0 transition-colors ${
-                  isTimeNow
-                    ? 'bg-amber-500 text-slate-950 border-amber-500'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700'
-                }`}
-              >
-                {t('now')}
-              </button>
             </div>
           </div>
 
-          {/* Waiting Minutes */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
-              {t('waiting_minutes')}
-            </label>
+          {/* Row 2: Hill Road — full width pill toggle */}
+          <label className="flex items-center gap-3 cursor-pointer select-none w-full p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/60 hover:border-amber-400 transition-colors">
             <input
-              type="number"
-              min="0"
-              step="1"
-              value={waitingMinutes === 0 ? '' : waitingMinutes}
-              onChange={(e) => setWaitingMinutes(Math.max(0, parseInt(e.target.value) || 0))}
-              placeholder="0 min"
-              className="w-full h-11 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-amber-500/50"
+              type="checkbox"
+              checked={isGhatRoad}
+              onChange={(e) => setIsGhatRoad(e.target.checked)}
+              className="w-5 h-5 rounded text-amber-500 focus:ring-amber-400 border-slate-300 dark:border-slate-700 shrink-0"
             />
-          </div>
-
-          {/* Hill Road Tickbox */}
-          <div className="flex items-center sm:pt-6">
-            <label className="flex items-center gap-2 cursor-pointer select-none">
-              <input
-                type="checkbox"
-                checked={isGhatRoad}
-                onChange={(e) => setIsGhatRoad(e.target.checked)}
-                className="w-5 h-5 rounded text-amber-500 focus:ring-amber-400 border-slate-300 dark:border-slate-700"
-              />
-              <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">
-                {t('hill_road')}
-              </span>
-            </label>
-          </div>
+            <span className="text-xs font-semibold text-slate-800 dark:text-slate-200 leading-snug">
+              {t('hill_road')}
+            </span>
+          </label>
         </div>
 
         {/* Manual Distance Box (Always Visible) */}
