@@ -1,0 +1,26 @@
+{
+  "asOf": "2026-10-27",
+  "old": {
+    "base": 25,
+    "baseKm": 1.8,
+    "perKm": 12,
+    "waitBlockMin": 5,
+    "waitBlockFare": 3.5,
+    "nightFrom": 23,
+    "nightTo": 5,
+    "nightMult": 1.5
+  },
+  "new": {
+    "base": 50,
+    "baseKm": 1.8,
+    "perKm": 25,
+    "waitPerMin": 1,
+    "nightFrom": 22,
+    "nightTo": 5,
+    "nightMult": 1.5,
+    "ghat": {
+      "base": 60,
+      "perKm": 30
+    }
+  }
+}

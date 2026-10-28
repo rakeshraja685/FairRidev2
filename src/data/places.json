@@ -1,0 +1,367 @@
+[
+  {
+    "_todo": "TODO: Grow landmark list to 300-1000 places covering all major zones and stops across Chennai Metropolitan Area.",
+    "id": "chennai-central",
+    "nameEn": "Chennai Central Railway Station (Puratchi Thalaivar Dr. MGR)",
+    "nameTa": "சென்னை சென்ட்ரல் ரயில் நிலையம்",
+    "lat": 13.0827,
+    "lng": 80.2757
+  },
+  {
+    "id": "chennai-egmore",
+    "nameEn": "Chennai Egmore Railway Station",
+    "nameTa": "சென்னை எழும்பூர் ரயில் நிலையம்",
+    "lat": 13.0784,
+    "lng": 80.2608
+  },
+  {
+    "id": "chennai-airport",
+    "nameEn": "Chennai International Airport (Meenambakkam)",
+    "nameTa": "சென்னை சர்வதேச விமான நிலையம்",
+    "lat": 12.9815,
+    "lng": 80.1636
+  },
+  {
+    "id": "cmbt-koyambedu",
+    "nameEn": "Koyambedu CMBT Bus Terminus",
+    "nameTa": "கோயம்பேடு புறநகர் பேருந்து நிலையம்",
+    "lat": 13.0694,
+    "lng": 80.2057
+  },
+  {
+    "id": "kcbt-kilambakkam",
+    "nameEn": "Kilambakkam KCBT Bus Terminus",
+    "nameTa": "கிளாம்பாக்கம் பேருந்து முனையம்",
+    "lat": 12.8624,
+    "lng": 80.0783
+  },
+  {
+    "id": "t-nagar-bus-stand",
+    "nameEn": "T. Nagar (Panagal Park & Bus Terminus)",
+    "nameTa": "தி. நகர் பனகல் பார்க் / பேருந்து நிலையம்",
+    "lat": 13.0418,
+    "lng": 80.2341
+  },
+  {
+    "id": "marina-beach",
+    "nameEn": "Marina Beach (Gandhi Statue)",
+    "nameTa": "மெரினா கடற்கரை (காந்தி சிலை)",
+    "lat": 13.0475,
+    "lng": 80.2824
+  },
+  {
+    "id": "besant-nagar-beach",
+    "nameEn": "Besant Nagar (Elliot's Beach)",
+    "nameTa": "பெசன்ட் நகர் கடற்கரை (எலியட்ஸ் பீச்)",
+    "lat": 12.9998,
+    "lng": 80.2718
+  },
+  {
+    "id": "guindy-kathipara",
+    "nameEn": "Guindy Kathipara Junction",
+    "nameTa": "கிண்டி கத்திப்பாரா சந்திப்பு",
+    "lat": 13.0067,
+    "lng": 80.2036
+  },
+  {
+    "id": "phoenix-marketcity",
+    "nameEn": "Phoenix MarketCity & Velachery",
+    "nameTa": "பீனிக்ஸ் மார்க்கெட் சிட்டி & வேளச்சேரி",
+    "lat": 12.9915,
+    "lng": 80.2170
+  },
+  {
+    "id": "thiruvanmiyur-depot",
+    "nameEn": "Thiruvanmiyur Bus Depot / Marundeeswarar Temple",
+    "nameTa": "திருவான்மியூர் பேருந்து பணிமனை / மருந்தீஸ்வரர் கோவில்",
+    "lat": 12.9863,
+    "lng": 80.2605
+  },
+  {
+    "id": "mylapore-temple",
+    "nameEn": "Mylapore Kapaleeshwarar Temple / Luz",
+    "nameTa": "மயிலாப்பூர் கபாலீஸ்வரர் கோவில் / லஸ்",
+    "lat": 13.0339,
+    "lng": 80.2698
+  },
+  {
+    "id": "adyar-junction",
+    "nameEn": "Adyar Signal / Bus Depot",
+    "nameTa": "அடையாறு சிக்னல் / பேருந்து நிலையம்",
+    "lat": 13.0064,
+    "lng": 80.2575
+  },
+  {
+    "id": "iit-madras",
+    "nameEn": "IIT Madras (Main Gate)",
+    "nameTa": "ஐஐடி மெட்ராஸ் (முதன்மை நுழைவாயில்)",
+    "lat": 13.0063,
+    "lng": 80.2425
+  },
+  {
+    "id": "anna-university",
+    "nameEn": "Anna University Guindy Campus",
+    "nameTa": "அண்ணா பல்கலைக்கழகம் கிண்டி வளாகம்",
+    "lat": 13.0109,
+    "lng": 80.2354
+  },
+  {
+    "id": "tidel-park",
+    "nameEn": "TIDEL Park (Tharamani)",
+    "nameTa": "டைடல் பார்க் (தரமணி)",
+    "lat": 12.9893,
+    "lng": 80.2476
+  },
+  {
+    "id": "dlf-cybercity",
+    "nameEn": "DLF Cybercity (Porur / Manapakkam)",
+    "nameTa": "டிஎல்எஃப் சைபர்சிட்டி (போரூர் / மணப்பாக்கம்)",
+    "lat": 13.0242,
+    "lng": 80.1706
+  },
+  {
+    "id": "omr-sholinganallur",
+    "nameEn": "OMR Sholinganallur Junction",
+    "nameTa": "ஓஎம்ஆர் சோழிங்கநல்லூர் சந்திப்பு",
+    "lat": 12.9010,
+    "lng": 80.2279
+  },
+  {
+    "id": "siruseri-sipcot",
+    "nameEn": "Siruseri SIPCOT IT Park",
+    "nameTa": "சிறுசேரி சிப்காட் தகவல் தொழில்நுட்ப பூங்கா",
+    "lat": 12.8286,
+    "lng": 80.2195
+  },
+  {
+    "id": "tambaram-railway-station",
+    "nameEn": "Tambaram Railway Station & Bus Stand",
+    "nameTa": "தாம்பரம் ரயில் நிலையம் மற்றும் பேருந்து நிலையம்",
+    "lat": 12.9249,
+    "lng": 80.1280
+  },
+  {
+    "id": "chromepet-station",
+    "nameEn": "Chromepet Railway Station & MIT",
+    "nameTa": "குரோம்பேட்டை ரயில் நிலையம் & எம்ஐடி",
+    "lat": 12.9517,
+    "lng": 80.1412
+  },
+  {
+    "id": "pallavaram-junction",
+    "nameEn": "Pallavaram GST Road",
+    "nameTa": "பல்லாவரம் ஜிஎஸ்டி சாலை",
+    "lat": 12.9675,
+    "lng": 80.1491
+  },
+  {
+    "id": "alandur-metro",
+    "nameEn": "Alandur Metro Station",
+    "nameTa": "ஆலந்தூர் மெட்ரோ நிலையம்",
+    "lat": 13.0041,
+    "lng": 80.2014
+  },
+  {
+    "id": "vadapalani-temple",
+    "nameEn": "Vadapalani Murugan Temple & Nexus Vijaya Mall",
+    "nameTa": "வடபழனி முருகன் கோவில் & நெக்ஸஸ் விஜயா மால்",
+    "lat": 13.0500,
+    "lng": 80.2121
+  },
+  {
+    "id": "ashok-pillar",
+    "nameEn": "Ashok Nagar (Ashok Pillar)",
+    "nameTa": "அசோக் நகர் (அசோக் பில்லர்)",
+    "lat": 13.0335,
+    "lng": 80.2114
+  },
+  {
+    "id": "kk-nagar-depot",
+    "nameEn": "K.K. Nagar Bus Terminus",
+    "nameTa": "கே.கே. நகர் பேருந்து நிலையம்",
+    "lat": 13.0384,
+    "lng": 80.1989
+  },
+  {
+    "id": "kodambakkam-station",
+    "nameEn": "Kodambakkam Railway Station / Meenakshi College",
+    "nameTa": "கோடம்பாக்கம் ரயில் நிலையம் / மீனாட்சி கல்லூரி",
+    "lat": 13.0518,
+    "lng": 80.2263
+  },
+  {
+    "id": "valluvar-kottam",
+    "nameEn": "Nungambakkam Valluvar Kottam",
+    "nameTa": "நுங்கம்பாக்கம் வள்ளுவர் கோட்டம்",
+    "lat": 13.0537,
+    "lng": 80.2415
+  },
+  {
+    "id": "express-avenue",
+    "nameEn": "Express Avenue Mall (Royapettah)",
+    "nameTa": "எக்ஸ்பிரஸ் அவென்யூ மால் (ராயப்பேட்டை)",
+    "lat": 13.0587,
+    "lng": 80.2642
+  },
+  {
+    "id": "triplicane-temple",
+    "nameEn": "Triplicane Parthasarathy Temple",
+    "nameTa": "திருவல்லிக்கேணி பார்த்தசாரதி கோவில்",
+    "lat": 13.0539,
+    "lng": 80.2771
+  },
+  {
+    "id": "santhome-cathedral",
+    "nameEn": "Santhome Cathedral Basilica",
+    "nameTa": "சாந்தோம் பேராலயம்",
+    "lat": 13.0336,
+    "lng": 80.2783
+  },
+  {
+    "id": "rajiv-gandhi-hospital",
+    "nameEn": "Rajiv Gandhi Govt General Hospital (GH)",
+    "nameTa": "ராஜீவ் காந்தி அரசு பொது மருத்துவமனை (GH)",
+    "lat": 13.0811,
+    "lng": 80.2796
+  },
+  {
+    "id": "stanley-hospital",
+    "nameEn": "Stanley Medical College & Hospital (Royapuram)",
+    "nameTa": "ஸ்டான்லி அரசு மருத்துவமனை (ராயபுரம்)",
+    "lat": 13.1075,
+    "lng": 80.2872
+  },
+  {
+    "id": "apollo-greams-road",
+    "nameEn": "Apollo Hospitals (Greams Road, Thousand Lights)",
+    "nameTa": "அப்போலோ மருத்துவமனை (கிரீம்ஸ் ரோடு)",
+    "lat": 13.0601,
+    "lng": 80.2514
+  },
+  {
+    "id": "kilpauk-medical-college",
+    "nameEn": "Kilpauk Medical College (KMC)",
+    "nameTa": "கீழ்ப்பாக்கம் அரசு மருத்துவக் கல்லூரி",
+    "lat": 13.0805,
+    "lng": 80.2435
+  },
+  {
+    "id": "chetpet-ecopark",
+    "nameEn": "Chetpet Railway Station & EcoPark",
+    "nameTa": "சேத்துப்பட்டு ரயில் நிலையம் மற்றும் சுற்றுச்சூழல் பூங்கா",
+    "lat": 13.0722,
+    "lng": 80.2438
+  },
+  {
+    "id": "anna-nagar-roundtana",
+    "nameEn": "Anna Nagar Roundtana & Tower Park",
+    "nameTa": "அண்ணா நகர் ரவுண்டானா & டவர் பூங்கா",
+    "lat": 13.0878,
+    "lng": 80.2144
+  },
+  {
+    "id": "mogappair-west-depot",
+    "nameEn": "Mogappair West Bus Terminus",
+    "nameTa": "முகப்பேர் மேற்கு பேருந்து பணிமனை",
+    "lat": 13.0833,
+    "lng": 80.1711
+  },
+  {
+    "id": "ambattur-estate",
+    "nameEn": "Ambattur Industrial Estate Bus Depot",
+    "nameTa": "அம்பத்தூர் தொழிற்பேட்டை பேருந்து நிலையம்",
+    "lat": 13.0983,
+    "lng": 80.1617
+  },
+  {
+    "id": "avadi-bus-stand",
+    "nameEn": "Avadi Railway Station & Bus Terminus",
+    "nameTa": "ஆவடி ரயில் நிலையம் மற்றும் பேருந்து நிலையம்",
+    "lat": 13.1189,
+    "lng": 80.1017
+  },
+  {
+    "id": "madhavaram-bus-terminus",
+    "nameEn": "Madhavaram MMBT Bus Terminus",
+    "nameTa": "மாதவரம் புறநகர் பேருந்து நிலையம்",
+    "lat": 13.1492,
+    "lng": 80.2227
+  },
+  {
+    "id": "perambur-railway-station",
+    "nameEn": "Perambur Railway Station",
+    "nameTa": "பெரம்பூர் ரயில் நிலையம்",
+    "lat": 13.1085,
+    "lng": 80.2427
+  },
+  {
+    "id": "villivakkam-station",
+    "nameEn": "Villivakkam Railway Station",
+    "nameTa": "வில்லிவாக்கம் ரயில் நிலையம்",
+    "lat": 13.1065,
+    "lng": 80.2076
+  },
+  {
+    "id": "washermanpet-metro",
+    "nameEn": "Washermanpet Metro & Sir Theagaraya College",
+    "nameTa": "வண்ணாரப்பேட்டை மெட்ரோ & சர் தியாகராயா கல்லூரி",
+    "lat": 13.1096,
+    "lng": 80.2818
+  },
+  {
+    "id": "parrys-corner-broadway",
+    "nameEn": "Broadway Bus Terminus & Parrys Corner",
+    "nameTa": "பிராட்வே பேருந்து நிலையம் & பாரிஸ் கார்னர்",
+    "lat": 13.0903,
+    "lng": 80.2885
+  },
+  {
+    "id": "thiruvottiyur-temple",
+    "nameEn": "Thiruvottiyur Vadivudaiamman Temple",
+    "nameTa": "திருவொற்றியூர் வடிவுடையம்மன் கோவில்",
+    "lat": 13.1611,
+    "lng": 80.3014
+  },
+  {
+    "id": "ennore-station",
+    "nameEn": "Ennore Railway Station",
+    "nameTa": "எண்ணூர் ரயில் நிலையம்",
+    "lat": 13.2089,
+    "lng": 80.3235
+  },
+  {
+    "id": "poonamallee-bus-stand",
+    "nameEn": "Poonamallee Bus Terminus",
+    "nameTa": "பூந்தமல்லி பேருந்து நிலையம்",
+    "lat": 13.0488,
+    "lng": 80.0956
+  },
+  {
+    "id": "red-hills-bus-stand",
+    "nameEn": "Red Hills Bus Terminus",
+    "nameTa": "செங்குன்றம் (ரெட் ஹில்ஸ்) பேருந்து நிலையம்",
+    "lat": 13.1953,
+    "lng": 80.1989
+  },
+  {
+    "id": "medavakkam-junction",
+    "nameEn": "Medavakkam Junction",
+    "nameTa": "மேடவாக்கம் சந்திப்பு",
+    "lat": 12.9208,
+    "lng": 80.1878
+  },
+  {
+    "id": "ecr-akkarai",
+    "nameEn": "ECR Akkarai / Sholinganallur Link Road",
+    "nameTa": "ஈசிஆர் அக்கரை / சோழிங்கநல்லூர் இணைப்பு சாலை",
+    "lat": 12.8998,
+    "lng": 80.2520
+  },
+  {
+    "id": "vandalur-zoo",
+    "nameEn": "Vandalur Zoo (Arignar Anna Zoological Park)",
+    "nameTa": "வண்டலூர் உயிரியல் பூங்கா",
+    "lat": 12.8797,
+    "lng": 80.0827
+  }
+]
