@@ -284,55 +284,85 @@ export const Calculator: React.FC<CalculatorProps> = ({ onNavigateTab }) => {
 
         {/* Options Row (Time, Waiting, Hill Road) */}
         <div className="space-y-3 pt-2">
-          {/* Row 1: Time + Waiting — two equal columns */}
-          <div className="grid grid-cols-2 gap-3">
+          {/* Row 1: Time + Waiting — responsive grid */}
+          <div className="grid grid-cols-1 min-[440px]:grid-cols-2 gap-3 sm:gap-3.5">
             {/* Time Picker */}
-            <div>
-              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-amber-500 shrink-0" />
-                <span className="truncate">{t('ride_time')}</span>
-              </label>
-              <div className="flex gap-1.5">
-                <input
-                  type="time"
-                  value={rideTime}
-                  onChange={(e) => {
-                    setRideTime(e.target.value);
-                    setIsTimeNow(false);
-                  }}
-                  className="w-full h-11 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-amber-500/50"
-                />
+            <div className="min-w-0">
+              <div className="flex items-center justify-between mb-1.5 gap-2">
+                <label
+                  htmlFor="ride-time-input"
+                  className="text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5 min-w-0 truncate"
+                >
+                  <Clock className="w-3.5 h-3.5 text-amber-500 shrink-0" />
+                  <span className="truncate">{t('ride_time')}</span>
+                </label>
                 <button
                   type="button"
                   onClick={() => {
                     setRideTime(getCurrentTimeHHMM());
                     setIsTimeNow(true);
                   }}
-                  className={`px-2.5 rounded-xl border text-xs font-bold shrink-0 transition-colors ${
+                  className={`px-2.5 py-0.5 rounded-full text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 border ${
                     isTimeNow
-                      ? 'bg-amber-500 text-slate-950 border-amber-500'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-300 dark:border-slate-700'
+                      ? 'bg-amber-500 text-slate-950 border-amber-500 shadow-xs'
+                      : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700'
                   }`}
+                  title="Set to current time"
                 >
-                  {t('now')}
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      isTimeNow ? 'bg-slate-950 animate-pulse' : 'bg-amber-500'
+                    }`}
+                  />
+                  <span>{t('now')}</span>
                 </button>
               </div>
+              <input
+                id="ride-time-input"
+                type="time"
+                value={rideTime}
+                onChange={(e) => {
+                  setRideTime(e.target.value);
+                  setIsTimeNow(false);
+                }}
+                className="w-full h-11 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-amber-500/50"
+              />
             </div>
 
             {/* Waiting Minutes */}
-            <div>
-              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1 truncate">
-                {t('waiting_minutes')}
-              </label>
-              <input
-                type="number"
-                min="0"
-                step="1"
-                value={waitingMinutes === 0 ? '' : waitingMinutes}
-                onChange={(e) => setWaitingMinutes(Math.max(0, parseInt(e.target.value) || 0))}
-                placeholder="0 min"
-                className="w-full h-11 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-amber-500/50"
-              />
+            <div className="min-w-0">
+              <div className="flex items-center justify-between mb-1.5 gap-2">
+                <label
+                  htmlFor="waiting-minutes-input"
+                  className="text-xs font-semibold text-slate-700 dark:text-slate-300 truncate"
+                >
+                  {t('waiting_minutes')}
+                </label>
+                {waitingMinutes > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setWaitingMinutes(0)}
+                    className="text-[11px] font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 shrink-0"
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+              <div className="relative flex items-center">
+                <input
+                  id="waiting-minutes-input"
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={waitingMinutes === 0 ? '' : waitingMinutes}
+                  onChange={(e) => setWaitingMinutes(Math.max(0, parseInt(e.target.value) || 0))}
+                  placeholder="0"
+                  className="w-full h-11 pl-3 pr-12 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white text-sm font-medium focus:ring-2 focus:ring-amber-500/50"
+                />
+                <span className="absolute right-3 text-xs font-semibold text-slate-400 dark:text-slate-500 pointer-events-none select-none">
+                  min
+                </span>
+              </div>
             </div>
           </div>
 
@@ -351,16 +381,16 @@ export const Calculator: React.FC<CalculatorProps> = ({ onNavigateTab }) => {
         </div>
 
         {/* Manual Distance Box (Always Visible) */}
-        <div className="p-3 bg-slate-50 dark:bg-slate-950/60 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="flex-1">
+        <div className="p-3.5 bg-slate-50 dark:bg-slate-950/60 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col min-[480px]:flex-row min-[480px]:items-center justify-between gap-3">
+          <div className="flex-1 min-w-0">
             <label className="block text-xs font-bold text-slate-700 dark:text-slate-300">
               {t('manual_distance')}
             </label>
-            <p className="text-[11px] text-slate-500 dark:text-slate-400">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">
               {t('manual_distance_hint')}
             </p>
           </div>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex items-center gap-2 self-start min-[480px]:self-auto shrink-0">
             <input
               type="number"
               min="0.1"
@@ -370,7 +400,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ onNavigateTab }) => {
                 setManualDistance(e.target.value);
                 setUseManualKm(true);
               }}
-              className="w-28 h-10 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold text-base text-center focus:ring-2 focus:ring-amber-500/50"
+              className="w-24 sm:w-28 h-10 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white font-bold text-base text-center focus:ring-2 focus:ring-amber-500/50"
             />
             <span className="text-sm font-bold text-slate-600 dark:text-slate-400">km</span>
           </div>
@@ -430,10 +460,10 @@ export const Calculator: React.FC<CalculatorProps> = ({ onNavigateTab }) => {
             <div className="text-xs uppercase tracking-wider font-extrabold text-amber-600 dark:text-amber-400">
               {t('pay_about')}
             </div>
-            <div className="text-5xl sm:text-6xl font-black text-slate-950 dark:text-white tracking-tight mt-1 flex items-baseline gap-2">
+            <div className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-950 dark:text-white tracking-tight mt-1 flex items-baseline gap-2 flex-wrap">
               <span>{formatFare(calculatedNewFare.total)}</span>
               {isNightNew && (
-                <span className="text-xs font-bold uppercase px-2.5 py-1 rounded-full bg-indigo-500 text-white tracking-normal">
+                <span className="text-xs font-bold uppercase px-2.5 py-1 rounded-full bg-indigo-500 text-white tracking-normal shrink-0">
                   Night
                 </span>
               )}

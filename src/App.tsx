@@ -88,32 +88,32 @@ export function App() {
     >
       {/* Top App Bar */}
       <header className="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
-        <div className="max-w-2xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="max-w-2xl mx-auto px-3 sm:px-4 h-16 flex items-center justify-between gap-2">
           {/* Logo */}
           <div
             onClick={() => setActiveTab('calculator')}
-            className="flex items-center gap-2.5 cursor-pointer select-none"
+            className="flex items-center gap-2 sm:gap-2.5 cursor-pointer select-none min-w-0 flex-1 pr-1"
           >
-            <div className="w-10 h-10 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-xl shadow-md shadow-amber-500/25">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center font-black text-lg sm:text-xl shadow-md shadow-amber-500/25 shrink-0">
               🛺
             </div>
-            <div>
-              <div className="font-black text-lg tracking-tight leading-none text-slate-950 dark:text-white flex items-center gap-1.5">
+            <div className="min-w-0">
+              <div className="font-black text-base sm:text-lg tracking-tight leading-none text-slate-950 dark:text-white flex items-center gap-1.5">
                 <span>FairRide</span>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-400">
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-400 shrink-0">
                   TN 2026
                 </span>
               </div>
-              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">
+              <div className="text-[10px] text-slate-500 dark:text-slate-400 font-medium truncate max-w-[130px] min-[390px]:max-w-[190px] sm:max-w-none">
                 {t('app_tagline')}
               </div>
             </div>
           </div>
 
           {/* Right Header Controls */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
             {!isOnline && (
-              <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800">
+              <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-800 shrink-0">
                 <WifiOff className="w-3 h-3" />
                 {t('offline_badge')}
               </span>
@@ -123,17 +123,20 @@ export function App() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm"
+              className="px-2 sm:px-2.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 font-bold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shadow-sm shrink-0 flex items-center gap-1"
               title="Switch language between Tamil and English"
             >
-              {i18n.language === 'ta' ? 'EN (English)' : 'தமிழ் (Tamil)'}
+              <span>{i18n.language === 'ta' ? 'English' : 'தமிழ்'}</span>
+              <span className="hidden min-[480px]:inline">
+                {i18n.language === 'ta' ? ' (EN)' : ' (Tamil)'}
+              </span>
             </button>
 
             {/* Large Text Switch */}
             <button
               type="button"
               onClick={() => setIsLargeText(!isLargeText)}
-              className={`p-2 rounded-xl border text-xs font-bold transition-colors ${
+              className={`p-1.5 sm:p-2 rounded-xl border text-xs font-bold transition-colors shrink-0 ${
                 isLargeText
                   ? 'bg-amber-500 text-slate-950 border-amber-500'
                   : 'bg-slate-50 dark:bg-slate-800/80 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300'
@@ -147,7 +150,7 @@ export function App() {
             <button
               type="button"
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition-colors"
+              className="p-1.5 sm:p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition-colors shrink-0"
               title={isDarkMode ? t('light_mode') : t('dark_mode')}
             >
               {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4" />}
@@ -156,7 +159,7 @@ export function App() {
         </div>
 
         {/* Tab Navigation Ribbon */}
-        <div className="max-w-2xl mx-auto px-4 overflow-x-auto scrollbar-none flex gap-1 py-1 border-t border-slate-100 dark:border-slate-800/50">
+        <div className="max-w-2xl mx-auto px-3 sm:px-4 overflow-x-auto scrollbar-none flex gap-1 py-1 border-t border-slate-100 dark:border-slate-800/50">
           {[
             { id: 'calculator', label: t('tab_calculator'), icon: CalcIcon },
             { id: 'quote_check', label: t('tab_quote_check'), icon: HelpCircle },

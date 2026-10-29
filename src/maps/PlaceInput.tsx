@@ -168,17 +168,20 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
 
   return (
     <div className="relative w-full" ref={containerRef}>
-      <div className="flex items-center justify-between mb-1.5">
-        <label htmlFor={id} className="text-sm font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-          <MapPin className="w-4 h-4 text-amber-500" />
-          {label}
+      <div className="flex items-center justify-between mb-1.5 gap-2">
+        <label
+          htmlFor={id}
+          className="text-sm font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5 min-w-0 truncate"
+        >
+          <MapPin className="w-4 h-4 text-amber-500 shrink-0" />
+          <span className="truncate">{label}</span>
         </label>
         {showLocationBtn && onUseLocation && (
           <button
             type="button"
             onClick={onUseLocation}
             disabled={isLocating}
-            className="text-xs font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 flex items-center gap-1 py-0.5 px-2 rounded-full bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 transition-colors"
+            className="text-xs font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 flex items-center gap-1 py-0.5 px-2 rounded-full bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 transition-colors shrink-0"
           >
             {isLocating ? (
               <>
